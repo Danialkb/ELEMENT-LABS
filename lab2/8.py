@@ -3,6 +3,7 @@ def deposit(cur, val, currency):
     print(f"Ваш текущий счет = {cur} {currency}")
     return cur
 
+
 def withdraw(cur, val, currency):
     if val > cur:
         print("Недостаточно средств!!!")
@@ -11,7 +12,8 @@ def withdraw(cur, val, currency):
     print(f"Ваш текущий счет = {cur} {currency}")
     return cur
 
-def changeCurrency(cur, currency):
+
+def change_currency(cur, currency):
     if currency == "KZT":
         cur /= 470
         currency = "USD"
@@ -20,6 +22,7 @@ def changeCurrency(cur, currency):
         currency = "KZT"
     print(f"Ваш текущий счет = {cur} {currency}")
     return (cur, currency)
+
 
 current = 0.0
 currency = "KZT"
@@ -36,6 +39,6 @@ while True:
         value = float(input("Введите сумму\n"))
         current = withdraw(current, value, currency)
     elif command == 3:
-        current, currency = changeCurrency(current, currency)
+        current, currency = change_currency(current, currency)
     else:
         break
